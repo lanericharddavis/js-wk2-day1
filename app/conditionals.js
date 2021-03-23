@@ -69,10 +69,10 @@ function isFever(temp) {
     if (temp >= 103) {
         return "fever go to hospital"
     }
-    else if (temp >= 98.6 && temp < 103) {
+    else if (temp > 98.6 && temp < 103) {
         return "fever"
     }
-    else if (temp < 98.6) {
+    else if (temp <= 98.6) {
         return "no fever"
     }
 }
@@ -86,8 +86,13 @@ let myCar = {
 }
 
 function isStopped(car) {
-
+    if (myCar.moving === false) {
+        return true
+    } else {
+        return false
+    }
 }
+
 
 //6. Write a function that returns true if a dish is yours and is dirty, or false if one of the statements is false
 
@@ -97,5 +102,9 @@ let dish = {
 }
 
 function washDish(dish) {
-
+    if (dish.yourDish == true && dish.isDirty == true) {
+        return true
+    } else {
+        return false
+    }
 }
